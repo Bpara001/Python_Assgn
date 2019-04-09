@@ -9,17 +9,20 @@ class Point():
     def __repr__(self):
         return "<Point x:{0},y:{1}>".format(self.x, self.y)
 
-    # TODO: implement addition
+    # implement addition
     def __add__(self, other):
-        pass
+        return Point(self.x +other.x, self.y + other.y)
 
-    # TODO: implement subtraction
+    # implement subtraction
     def __sub__(self, other):
-        pass
+        return Point( self.x - other.x, self.y - other.y)
 
-    # TODO: implement in-place addition
+
+    # implement in-place addition
     def __iadd__(self, other):
-        pass
+        self.x += other.x
+        self.y += other.y
+        return self
 
 
 def main():
@@ -27,12 +30,15 @@ def main():
     p1 = Point(10, 20)
     p2 = Point(30, 30)
     print(p1, p2)
-
-    # TODO: Add two points
-
-    # TODO: subtract two points
-
-    # TODO: Perform in-place addition
+    # Add two points
+    p3 = p1 + p2
+    print(p3)
+    # subtract two points
+    p4 = p2 - p1
+    print(p4)
+    # Perform in-place addition
+    p1 += p2
+    print(p1)
 
 
 if __name__ == "__main__":
